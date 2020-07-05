@@ -11,7 +11,6 @@ pipeline{
     }
  stage('Upload to Nexus'){
  steps{
-nexusArtifactUploader artifacts: [[artifactId: 'maven-web-application', classifier: '', file: 'target/maven-web-application-0.0.1-SNAPSHOT.war', type: 'war']], credentialsId: '0d504266-cba7-408b-8e06-4b20fd606354', groupId: 'com.mt', nexusUrl: '13.233.196.120', nexusVersion: 'nexus3', protocol: 'http', repository: 'harish-release', version: '0.0.1-SNAPSHOT'}
-}
+nexusArtifactUploader artifacts: [[artifactId: 'maven-web-application', classifier: '', file: 'target/*.war', type: 'war']], credentialsId: '0d504266-cba7-408b-8e06-4b20fd606354', groupId: 'com.mt', nexusUrl: '13.233.196.120', nexusVersion: 'nexus3', protocol: 'http', repository: 'harish-release', version: '0.0.1-SNAPSHOT'}
 } 
 } 
